@@ -76,12 +76,12 @@ class Hidden2Normal(torch.nn.Module):
         return normal
   
     
- def plot_error(loss1, loss2, loss3, loss1_label, loss2_label, loss3_label):
-    plt.plot(np.arange(2, len(loss1)+1), loss1[1:], label=loss1_label)
-    plt.plot(np.arange(2, len(loss2)+1), loss2[1:], label=loss2_label)
-    plt.plot(np.arange(2, len(loss3)+1), loss3[1:], label=loss3_label)
-    plt.legend()
-    plt.xlabel('Epoch')
-    plt.ylabel('Loss')
-    plt.savefig('training_loss.pdf', format='pdf', dpi=300)
-    plt.show()
+def plot_error(loss1, loss2, loss3, loss1_label, loss2_label, loss3_label):
+   plt.plot(np.arange(2, len(loss1)+1), loss1[1:], label=loss1_label)
+   plt.plot(np.arange(2, len(loss2)+1), loss2[1:], label=loss2_label)
+   plt.plot(np.arange(2, len(loss3)+1), loss3[1:], label=loss3_label)
+   plt.legend()
+   plt.xlabel('Epoch')
+   plt.ylabel('Loss')
+   plt.savefig('training_loss.pdf', format='pdf', dpi=300)
+   plt.show()
