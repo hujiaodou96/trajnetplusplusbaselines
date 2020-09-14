@@ -25,11 +25,11 @@ Training LSTMs
 python -m trajnetbaselines.lstm.trainer_update 
 
 Three lstm models will be trained by running this script :
-M2: "use_goals_pred_goals" : 
+Model two: "use_goals_pred_goals" : 
     train the pred_goals model with goals and use the pred_goals to train the pred_trajs model
-M1: "not_use_goals" : 
+Model one: "not_use_goals" : 
     train the pred_trajs model without using goals but zero Tensor instead
-M0: "use_goals_pred_trajs": 
+Model zero: "use_goals_pred_trajs": 
     train the pred_trajs model with the true goal coordinates
     
 The training loss of pred_trajs model of these three models is shown in the training_loss.pdf
