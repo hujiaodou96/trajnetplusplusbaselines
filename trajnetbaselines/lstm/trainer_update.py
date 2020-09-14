@@ -703,6 +703,6 @@ if __name__ == '__main__':
     # generate data with goals to train the pred_traj model (M0)
     use_goals_pred_trajs_loss = main("use_goals_pred_trajs")
 
-    # plot the training loss of two models
+    # plot the training loss of three models
     plot_error(use_goals_pred_goal_loss, not_use_goals_loss, use_goals_pred_trajs_loss, 'E2: use_goals_pred_goals',
                'E1: not_use_goals', 'E0: use_goals_pred_trajs')
