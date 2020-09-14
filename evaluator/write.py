@@ -84,7 +84,8 @@ def main(args=None):
                 predictor.model.to(device)
             elif 'lstm' in model_name:
                 print("LSTM")
-                predictor = trajnetbaselines.lstm.LSTMPredictor.load(model)
+                #predictor = trajnetbaselines.lstm.LSTMPredictor.load(model)
+                predictor = trajnetbaselines.lstm_update.LSTMPredictor.load(model)
                 device = torch.device('cpu')
                 predictor.model.to(device)
             else:
