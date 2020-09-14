@@ -48,6 +48,17 @@ class InputEmbedding(torch.nn.Module):
         v[:, -1] = 1
         return v
 
+    
+class Pred_Goal(torch.nn.Module):
+    def __init__(self, hidden_dim):
+        super(Pred_Goal, self).__init__()
+        self.linear = torch.nn.Linear(hidden_dim, 2)
+
+    def forward(self, hidden_state):
+        pred_goal = self.linear(hidden_state)
+
+        return pred_goal
+    
 
 class Hidden2Normal(torch.nn.Module):
     def __init__(self, hidden_dim):
@@ -63,7 +74,7 @@ class Hidden2Normal(torch.nn.Module):
         normal[:, 4] = 0.7 * torch.sigmoid(normal[:, 4])  # rho
 
         return normal
-
+  
     
  def plot_error(loss1, loss2, loss3, loss1_label, loss2_label, loss3_label):
     plt.plot(np.arange(2, len(loss1)+1), loss1[1:], label=loss1_label)
