@@ -435,7 +435,7 @@ def prepare_data(path, subset='/train/', sample=1.0, goals=True):
     return all_scenes, None
 
 
-def main(model_flag, epochs=4):
+def main(model_flag, epochs=10):
     """
 
     Parameters
