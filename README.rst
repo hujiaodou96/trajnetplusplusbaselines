@@ -22,25 +22,17 @@ After conversion, copy the converted dataset to DATA_BLOCK
 Training LSTMs
 ==============
 
-The training script and its help menu:
-``python -m trajnetbaselines.lstm.trainer --help``
+python -m trajnetbaselines.lstm.trainer_update 
 
-Training GANs
-==============
-
-The training script and its help menu:
-``python -m trajnetbaselines.sgan.trainer --help``
-
-Evaluation
-==========
-
-The evaluation script and its help menu: ``python -m evaluator.trajnet_evaluator --help``
-
-More details regarding TrajNet++ evaluator are provided `here <https://github.com/vita-epfl/trajnetplusplusbaselines/blob/master/evaluator/README.rst>`_
-
-Evaluation on datasplits is based on the following categorization:
-
-.. image:: docs/train/Categorize.png
+Three lstm models will be trained by running this script :
+M2: "use_goals_pred_goals" : 
+    train the pred_goals model with goals and use the pred_goals to train the pred_trajs model
+M1: "not_use_goals" : 
+    train the pred_trajs model without using goals but zero Tensor instead
+M0: "use_goals_pred_trajs": 
+    train the pred_trajs model with the true goal coordinates
+    
+The training loss of pred_trajs model of these three models is shown in the training_loss.pdf
 
 Citation
 ========
